@@ -33,7 +33,7 @@
         }
 
         public function logar() {
-            if (($this->email == "contado@gmail.com") and ($this->senha === 123456)) {
+            if (($this->nome == "Pedro Henrique Teixeira Pião") and ($this->email == "contado@gmail.com") and ($this->senha === 123456)) {
                 echo "Logado com sucesso";
             } else {
                 echo "Dados inválidos";
