@@ -7,7 +7,7 @@ class Produto {
     private $id, $nome, $descricao;
 
     public function getId() {
-        return $this -> descricao;
+        return $this -> id;
     }
 
     public function setId($id) {
