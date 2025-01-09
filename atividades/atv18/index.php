@@ -5,12 +5,7 @@ require_once './vendor/autoload.php';
 use App\Model\Produto;
 use App\Model\ProdutoDao;
 
-$produto = new Produto();
-$produto->setId(10);
-$produto->setNome('Cadeira Gamer');
-$produto->setDescricao('Assento retrátil');
 
-$produtoDao = new ProdutoDao();
 
 // deleta
 // $produtoDao->delete(10);
@@ -19,13 +14,8 @@ $produtoDao = new ProdutoDao();
 //$produtoDao->update($produto);
 
 // Leitura
+$produtoDao = new ProdutoDao();
 $produtoDao -> read();
-
-foreach ($produtoDao -> read() as $produto) {
-    echo $produto['nome'].
-    "<br>".
-    $produto['descricao']. "<hr>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="py-br">
@@ -33,10 +23,35 @@ foreach ($produtoDao -> read() as $produto) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <nav>
-        <a href="./adicionar.php">Cadastro</a>
-    </nav>
+    <main>
+        <div id="area-table">
+            <table>
+                <tr id="topo">
+                    <th>ID</th>
+                    <th>NOME</th></th>
+                    <th>DESCRIÇÃO</th>
+                </tr>
+            <?php
+            foreach ($produtoDao -> read() as $produto) {
+            ?>
+                <tr>
+                    <td><?=$produto['id']?></td>
+                    <td><?=$produto['nome']?></td>
+                    <td><?=$produto['descricao']?></td>
+                    <td><a href=""></a>Alterar</td>
+                    <td><a href="">Deletar</a></td>
+                </tr>
+            <?php
+            }
+            ?>
+            </table>
+        </div>
+    </main>
+    <form action="./adicionar.php" method="get">
+        <button type="submit">Adicionar cliente</button>
+    </form>
 </body>
 </html>

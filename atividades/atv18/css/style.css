@@ -1,0 +1,21 @@
+
+#area-table {
+    width: 80%;
+    justify-content: center;
+    display: flex;
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            #topo{
+                background-color: gray;
+            }
+            th { 
+                text-align: left;
+            }
+        }
+}
+
+main {
+    justify-content: center;
+    display: flex;
+}
