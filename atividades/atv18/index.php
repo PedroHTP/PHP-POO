@@ -41,7 +41,7 @@ $produtoDao -> read();
                     <td><?=$produto['id']?></td>
                     <td><?=$produto['nome']?></td>
                     <td><?=$produto['descricao']?></td>
-                    <td><a href=""></a>Alterar</td>
+                    <td><a href="./alterar.php?id=<?=$produto['id']?>">Alterar</a></td>
                     <td><a href="">Deletar</a></td>
                 </tr>
             <?php

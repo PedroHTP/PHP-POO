@@ -29,6 +29,21 @@ class ProdutoDao {
         }
     }
 
+    public function readSolo($id) {
+
+        $comando = "SELECT * FROM produtos WHERE id = '$id'";
+
+        $stmt = Conexao::getConn() -> prepare($comando);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $resultado;
+        } else {
+            return [];
+        }
+    }
+
     public function update(Produto $p) {
         $comando = "UPDATE produtos SET nome = ?, descricao = ? WHERE id = ?";
         $stmt = Conexao::getConn()->prepare($comando);
