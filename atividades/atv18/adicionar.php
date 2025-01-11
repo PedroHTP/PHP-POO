@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Altera</title>
 </head>
 <body>
     <?php 
+    // SETS
     require_once './vendor/autoload.php';
 
     use App\Model\Produto;
@@ -31,6 +32,7 @@
             $produtoDao->create($produto);
 
             header('Location: index.php');
+            exit;
         }
     ?>
 </body>
